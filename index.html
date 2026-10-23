@@ -58,8 +58,20 @@
 <section id="texto"><h2>Lógica Estructurada (ST/IL)</h2><div class="panel"><div class="tb"><label>Lenguaje activo<select id="tlang"><option value="off">Desactivado</option><option value="ST">Structured Text (ST/SCL)</option><option value="IL">Lista de instrucciones (IL/STL)</option></select></label><button id="tconv">Convertir Ladder a texto</button></div>
 <div class="ed"><pre id="tgut">1</pre><textarea id="ttxt" spellcheck="false" aria-label="Programa de texto"></textarea></div>
 </div></section>
-<section id="vars"><h2>Tabla de variables y monitorización</h2><div class="two wide"><div class="panel"><div class="tb"><input id="vq" type="search" placeholder="Buscar variable" aria-label="Buscar variable"><button id="vadd">Agregar variable</button></div><div style="overflow-x:auto"><table id="vt"></table></div><p class="mut">Use el nombre simbólico en Ladder, GRAFCET y texto.</p></div><div class="panel" id="mon"></div></div></section>
-<section id="hmi"><h2>HMI / SCADA</h2>
+<section id="vars"><h2>Tabla de variables y monitorización</h2><div class="two wide"><div class="panel"><div class="tb"><div class="tb">
+    <select id="hscr" aria-label="Pantalla"></select>
+    <button id="hsnew">Nueva</button>
+    <button id="hsren">Renombrar</button>
+    <button id="hsdel">Eliminar</button>
+    <button id="hmode">Modo: Edición</button>
+    <button id="hzout" aria-label="Alejar">−</button>
+    <span id="hzp">100%</span>
+    <button id="hzin" aria-label="Acercar">+</button>
+    <button id="hzfit">Ajustar</button>
+    <!-- NUEVOS BOTONES AÑADIDOS AQUÍ -->
+    <button id="himpb">Importar Imagen</button>
+    <input id="himp" type="file" hidden accept="image/*">
+</div>
  <div class="pid"><aside class="panel"><h3>Objetos</h3><div id="hpal"></div><label>Símbolo ISA 5.1<select id="hsym"></select></label><button id="hsadd">Agregar símbolo</button></aside>
  <div><div class="tb"><select id="hscr" aria-label="Pantalla"></select><button id="hsnew">Nueva</button><button id="hsren">Renombrar</button><button id="hsdel">Eliminar</button><button id="hmode">Modo: Edición</button><button id="hzout" aria-label="Alejar">−</button><span id="hzp">100%</span><button id="hzin" aria-label="Acercar">+</button><button id="hzfit">Ajustar</button></div>
  <div id="albn" class="bn"></div><svg id="hcv" viewBox="0 0 900 420"></svg></div>
