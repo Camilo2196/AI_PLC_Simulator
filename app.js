@@ -349,6 +349,19 @@ $('#hpal').onclick=e=>{const b=e.target.closest('[data-hw]');if(b){State.hmi.hse
 $('#hsadd').onclick=()=>{const k=$('#hsym').value,d=ISA[k];State.hmi.hsel=hadd('sym',{sym:k,label:d.inst||d.n.slice(0,16)});State.hmi.edited=1;hinsp();drawH()};
 $('#hzin').onclick=()=>hz.zoom(1.25);$('#hzout').onclick=()=>hz.zoom(.8);$('#hzfit').onclick=hz.fit;
 
+// --- NUEVO: Lógica para importar imágenes al HMI ---
+$('#himpb').onclick=()=>$('#himp').click();
+$('#himp').onchange=e=>{
+    const f=e.target.files[0];e.target.value='';if(!f)return;
+    const r=new FileReader();
+    r.onload=()=>{
+        State.hmi.hsel=hadd('himg',{href:r.result, label:'Img Personalizada'});
+        State.hmi.edited=1; hinsp(); drawH();
+    };
+    r.readAsDataURL(f);
+};
+// ---------------------------------------------------
+
 /* alarmas */
 function alarms(){
     const t=new Date().toLocaleTimeString('es-CO');
