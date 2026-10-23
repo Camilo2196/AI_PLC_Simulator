@@ -31,4 +31,6 @@ export const WID = {
     'btn': { n: 'Pulsador', k: 'bit', wr: true, w: 40, h: 40, r: (o, v) => `<rect x="10" y="10" width="20" height="20" rx="5" fill="${v?'var(--ok)':'#0c2a40'}" stroke="var(--cy)" stroke-width="2"/><circle cx="20" cy="20" r="6" fill="${v?'#fff':'var(--rd)'}"/>` },
     'sw': { n: 'Interruptor', k: 'bit', wr: true, w: 40, h: 20, r: (o, v) => `<rect x="0" y="0" width="40" height="20" rx="10" fill="${v?'var(--ok)':'#22313f'}" stroke="var(--cy)" stroke-width="2"/><circle cx="${v?30:10}" cy="10" r="8" fill="#fff"/>` },
     'sym': { n: 'Símbolo ISA', w: 60, h: 60, r: (o) => `<g>${ISA[o.sym] ? (ISA[o.sym].inst ? ins({tag: o.label || '', loc: 'F'}) : ISA[o.sym].s) : ''}</g>` }
+/* NUEVO WIDGET DE IMAGEN DINÁMICA AÑADIDO ABAJO */
+    'himg': { n: 'Imagen Dinámica', k: 'bit', w: 60, h: 60, r: (o, v) => `<g style="opacity:${(!o.bind || v) ? 1 : 0.2}; transition: opacity 0.2s;"><image href="${o.href||''}" width="60" height="60" preserveAspectRatio="none"/></g>` }
 };
